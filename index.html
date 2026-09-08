@@ -147,6 +147,41 @@ footer{padding:56px 0 24px;background:var(--plum2);color:#fff}
 .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;background:var(--plum2);color:#fff;padding:14px 20px;border-radius:999px;font-size:14px;display:flex;gap:12px;align-items:center;z-index:100;transition:all .3s;pointer-events:none;font-weight:600}
 .toast.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}.toast a{color:var(--acc);text-decoration:underline}
 
+
+/* CART DRAWER */
+.cdrawer{position:fixed;inset:0;z-index:95;visibility:hidden;pointer-events:none}
+.cdrawer.open{visibility:visible;pointer-events:auto}
+.cdrawer .ov{position:absolute;inset:0;background:rgba(60,10,25,.45);opacity:0;transition:opacity .35s}.cdrawer.open .ov{opacity:1}
+.cdrawer .panel{position:absolute;top:0;right:0;bottom:0;width:min(460px,100%);background:#fff;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .45s cubic-bezier(.2,.8,.2,1);box-shadow:-30px 0 60px -30px rgba(0,0,0,.35)}
+.cdrawer.open .panel{transform:none}
+.cdrawer .chead{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;background:var(--plum);color:#fff}
+.cdrawer .chead h3{font-family:var(--serif);font-weight:500;font-size:24px;display:flex;align-items:baseline;gap:10px}.cdrawer .chead h3 span{font-family:var(--sans);font-size:12px;font-weight:600;opacity:.8}
+.cdrawer .x{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;display:grid;place-items:center}
+.cdrawer .ciclos{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:14px 22px;background:var(--cream)}
+.cdrawer .ciclos span{height:30px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:#fff;color:var(--mute);border:1px solid var(--line)}
+.cdrawer .ciclos span.on{background:var(--plum);color:#fff;border-color:var(--plum)}
+.cdrawer .ciclos p{grid-column:1/-1;margin:2px 0 0;font-size:12px;color:var(--ink2)}
+.cdrawer .cbody{flex:1;overflow:auto;padding:6px 22px 16px}
+.cline{display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.cline .im{width:72px;height:72px;border-radius:12px;overflow:hidden;display:grid;place-items:center}.cline .im img{width:100%;height:100%;object-fit:cover}
+.cline b{font-size:14px;display:block;line-height:1.3}.cline .sub{font-size:12px;color:var(--ink2);margin-top:2px}
+.cline .ctrl{display:flex;align-items:center;gap:10px;margin-top:8px}
+.cline .q{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;height:32px}.cline .q button{width:30px;height:30px;border:0;background:transparent;font-size:16px}.cline .q span{min-width:20px;text-align:center;font-size:13px;font-weight:700}
+.cline .rm{border:0;background:transparent;font-size:12px;color:var(--mute);text-decoration:underline;padding:0}
+.cline .pr{text-align:right;font-weight:700;font-size:14px}.cline .pr s{display:block;font-weight:400;font-size:11px;color:var(--mute)}
+.juntou{margin:14px 0 0;background:var(--acc);border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.4}
+.offer{margin-top:16px;border:1px dashed var(--plum);background:#FBF3F6;border-radius:16px;padding:14px;display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:center;animation:offin .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes offin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.offer .im{width:64px;height:64px;border-radius:12px;overflow:hidden;display:grid;place-items:center}.offer .im img{width:100%;height:100%;object-fit:cover}
+.offer .k{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--plum)}
+.offer b{display:block;font-size:14px;margin-top:2px;line-height:1.3}.offer p{margin:4px 0 0;font-size:12px;color:var(--ink2);line-height:1.4}
+.offer .btn{grid-column:1/-1;height:40px;font-size:13px}
+.offer .save{display:inline-block;background:var(--acc);border-radius:999px;padding:2px 8px;font-size:11px;font-weight:700;margin-left:4px;color:var(--ink)}
+.cempty{text-align:center;padding:40px 10px 20px;display:flex;flex-direction:column;align-items:center;gap:10px}.cempty h4{font-family:var(--serif);font-weight:500;font-size:24px}.cempty p{margin:0;color:var(--ink2);font-size:14px}
+.cdrawer .cfoot{border-top:1px solid var(--line);padding:16px 22px calc(18px + env(safe-area-inset-bottom));background:#fff}
+.cdrawer .cfoot .row{display:flex;justify-content:space-between;font-size:14px;padding:4px 0}.cdrawer .cfoot .row.save{color:var(--plum);font-weight:700}.cdrawer .cfoot .row.tot{font-size:18px;font-weight:700;padding-top:8px;margin-top:4px;border-top:1px solid var(--line)}
+.cdrawer .cfoot .note{margin:10px 0 0;text-align:center;font-size:12px;color:var(--mute)}
+.cdrawer .cfoot .btn{margin-top:12px}
 /* PDP v3 */
 .bopts{display:flex;flex-direction:column;gap:10px}
 .bopt{border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:22px 1fr auto;gap:12px;align-items:center;cursor:pointer;background:#fff;transition:border-color .2s}
@@ -255,7 +290,7 @@ footer{padding:56px 0 24px;background:var(--plum2);color:#fff}
       <form class="search" onsubmit="event.preventDefault();location.hash='#/quiz'"><input placeholder="O que você está procurando?" aria-label="Buscar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></form>
       <div class="hicons">
         <a href="#/contato" aria-label="Conta"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></a>
-        <a href="#/carrinho" aria-label="Carrinho"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1 13H5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cnt" id="badge">0</span></a>
+        <a href="#/carrinho" aria-label="Carrinho" onclick="event.preventDefault();openCart()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1 13H5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cnt" id="badge">0</span></a>
         <button class="burger" id="burger" aria-label="Menu" style="border:0;background:transparent"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
@@ -282,9 +317,12 @@ footer{padding:56px 0 24px;background:var(--plum2);color:#fff}
   <a href="#/quiz" data-d="quiz"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span>Meu ciclo</span></a>
   <button class="qb" onclick="openSheet()" aria-label="Compra rápida"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg></i><span>Compra rápida</span></button>
   <a href="#/contato" data-d="contato"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>Conta</span></a>
-  <a href="#/carrinho" data-d="carrinho"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1 13H5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cnt" id="badge2">0</span><span>Carrinho</span></a>
+  <a href="#/carrinho" data-d="carrinho" onclick="event.preventDefault();openCart()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1 13H5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cnt" id="badge2">0</span><span>Carrinho</span></a>
 </nav>
-<div class="sheet" id="sheet"><div class="ov" onclick="closeSheet()"></div><div class="panel"><div class="grab"></div><h3>Compra rápida <small>toque no + pra adicionar</small></h3><div class="list"></div><div class="foot"><a class="btn dark block" href="#/carrinho" onclick="closeSheet()">Ver carrinho</a><a class="btn outline block" href="#/quiz" onclick="closeSheet()">Fazer o quiz</a></div></div></div>
+<div class="cdrawer" id="cdrawer"><div class="ov" onclick="closeCart()"></div>
+  <aside class="panel" role="dialog" aria-label="Carrinho"><div class="chead"><h3>Seu ritual <span id="ccount"></span></h3><button class="x" onclick="closeCart()" aria-label="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="ciclos" id="cciclos"></div><div class="cbody" id="cbody"></div><div class="cfoot" id="cfoot"></div></aside></div>
+<div class="sheet" id="sheet"><div class="ov" onclick="closeSheet()"></div><div class="panel"><div class="grab"></div><h3>Compra rápida <small>toque no + pra adicionar</small></h3><div class="list"></div><div class="foot"><a class="btn dark block" href="#/carrinho" onclick="event.preventDefault();closeSheet();openCart()">Ver carrinho</a><a class="btn outline block" href="#/quiz" onclick="closeSheet()">Fazer o quiz</a></div></div></div>
 
 <footer><div class="wrap">
   <div class="fgrid">
@@ -423,9 +461,9 @@ const BRL = v=>"R$ "+v.toFixed(2).replace(".",",");
 let cart = {}; try{cart=JSON.parse(localStorage.getItem("oiciclo_cart")||"{}")}catch(e){cart={}}
 const itemOf = id => id.startsWith("kit-") ? KITS.find(k=>k.id===id) : P[id];
 const priceOf = it => it.por ?? it.preco;
-function saveCart(){ try{localStorage.setItem("oiciclo_cart",JSON.stringify(cart))}catch(e){} updateBadge(); }
-function addToCart(id,qty=1){ cart[id]=(cart[id]||0)+qty; saveCart(); const it=itemOf(id); toast(`${it.nome} entrou no seu ritual.`,'<a href="#/carrinho">Ver carrinho</a>'); }
-function setQty(id,q){ if(q<=0) delete cart[id]; else cart[id]=q; saveCart(); render(); }
+function saveCart(){ if(window.consolidar) consolidar(); try{localStorage.setItem("oiciclo_cart",JSON.stringify(cart))}catch(e){} updateBadge(); if(window.renderCart) renderCart(); }
+function addToCart(id,qty=1){ cart[id]=(cart[id]||0)+qty; saveCart(); if(window.openCart) openCart(); else toast(`${itemOf(id).nome} entrou no seu ritual.`); }
+function setQty(id,q){ if(q<=0) delete cart[id]; else cart[id]=q; saveCart(); if(location.hash.includes("carrinho")||location.hash.includes("checkout")) render(); }
 function cartCount(){ return Object.values(cart).reduce((a,b)=>a+b,0); }
 function cartTotal(){ return Object.entries(cart).reduce((a,[id,q])=>a+priceOf(itemOf(id))*q,0); }
 function updateBadge(){ const n=cartCount(); document.querySelectorAll("#badge,#badge2").forEach(b=>{b.textContent=n; b.classList.toggle("show",n>0);}); }
@@ -590,6 +628,34 @@ pages.quiz=()=>{if(qi>=QUIZ.length){const win=Object.entries(qs).sort((a,b)=>b[1
   const [q,opts]=QUIZ[qi];return `<section style="background:var(--beige)"><div class="wrap"><div class="quiz page"><span class="tag">Qual é o seu ciclo? · ${qi+1} de ${QUIZ.length}</span><div class="prog"><i style="width:${qi/QUIZ.length*100}%"></i></div><h1>${q}</h1><div class="qopts">${opts.map(([t,c])=>`<button class="qopt" onclick="qs['${c}']++;qi++;render()">${t}</button>`).join("")}</div><span class="muted" style="font-size:13px">Leva menos de um minuto. Sem cadastro.</span></div></div></section>`;};
 pages.nf=()=>`<section class="sec" style="text-align:center"><div class="wrap"><h1>Essa página está a caminho.</h1><div style="margin-top:20px">${btn("Voltar pra home","#/","dark")}</div></div></section>`;
 
+
+/* ============ CART DRAWER + OFERTAS ============ */
+let lastJuncao=null;
+function cartProds(){return Object.keys(cart).filter(id=>!id.startsWith("kit-"))}
+function kitSum(k){return k.itens.reduce((a,i)=>a+P[i].preco,0)}
+/* Junta potes soltos no kit quando todos os itens do kit estão no carrinho e o kit sai mais barato. Roda na carga e a cada gravação. */
+window.consolidar=function(){let changed=true,acc=null;while(changed){changed=false;const S=cartProds();const cands=KITS.filter(k=>k.itens.every(i=>S.includes(i))&&k.por<kitSum(k)).sort((a,b)=>(kitSum(b)-b.por)-(kitSum(a)-a.por));if(cands.length){const k=cands[0];k.itens.forEach(i=>{cart[i]-=1;if(cart[i]<=0)delete cart[i]});cart[k.id]=(cart[k.id]||0)+1;acc=acc||{kits:[],economia:0};acc.kits.push(k.nome);acc.economia+=kitSum(k)-k.por;changed=true}}if(acc)lastJuncao=acc;return !!acc};
+function offerFor(){const S=cartProds();const inKits=Object.keys(cart).filter(id=>id.startsWith("kit-")).map(id=>KITS.find(k=>k.id===id));
+  if(!Object.keys(cart).length)return {tipo:"downsell",id:"creatina",k:"Comece leve",titulo:"Creatina OiCiclo, a mais vendida",texto:"Pastilha de framboesa, sem shaker. 30 dias por R$ "+fmt(P.creatina.preco)+".",acao:"Adicionar ao ritual",add:["creatina"]};
+  if(S.length){const opts=KITS.map(k=>{const miss=k.itens.filter(i=>!S.includes(i));const have=k.itens.filter(i=>S.includes(i));return {k,miss,have,diff:k.por-have.reduce((a,i)=>a+P[i].preco,0),save:k.de-k.por}}).filter(o=>o.miss.length>=1&&o.miss.length<=2&&o.diff>0&&o.diff<o.miss.reduce((a,i)=>a+P[i].preco,0)).sort((a,b)=>a.miss.length-b.miss.length||b.save-a.save);
+    if(opts.length){const o=opts[0];return {tipo:"bump",id:o.miss[0],k:"Complete o ritual",titulo:"Leve o "+o.k.nome+" por só + R$ "+fmt(o.diff),texto:"Adiciona "+o.miss.map(i=>P[i].curto).join(" + ")+" e o kit fecha com R$ "+fmt(o.save)+" de economia vs. comprar separado.",acao:"Completar por + R$ "+fmt(o.diff),add:o.miss,save:o.save}}}
+  const cic=S.length?P[S[0]].ciclo:(inKits[0]?P[inKits[0].itens[0]].ciclo:"forca");const covered=new Set(S.concat(...inKits.map(k=>k.itens)));
+  const cand=Object.values(P).filter(p=>!covered.has(p.id)).sort((a,b)=>(a.ciclo===cic?0:1)-(b.ciclo===cic?0:1))[0];if(!cand)return null;
+  return {tipo:"cross",id:cand.id,k:"Combina com o seu ciclo",titulo:cand.nome,texto:cand.sub+".",acao:"Adicionar por R$ "+fmt(cand.preco),add:[cand.id]};}
+window.acceptOffer=function(ids){ids.forEach(i=>{cart[i]=(cart[i]||0)+1});saveCart()};
+window.renderCart=function(){const dr=document.getElementById("cdrawer");if(!dr)return;const ids=Object.keys(cart);const n=cartCount();document.getElementById("ccount").textContent=n?n+(n>1?" itens":" item"):"";
+  const covered=new Set(ids.flatMap(id=>id.startsWith("kit-")?KITS.find(k=>k.id===id).itens:[id]).map(i=>P[i].ciclo));const nc=covered.size;
+  document.getElementById("cciclos").innerHTML=Object.values(CICLOS).map(c=>`<span class="${covered.has(c.id)?"on":""}">${c.nome.replace("Ciclo ","")}</span>`).join("")+`<p>${n?(nc===4?"Sistema completo: os 4 ciclos no seu ritual.":`Seu ritual cobre ${nc} de 4 ciclos.`):"Monte seu ritual por ciclo."}</p>`;
+  const of=offerFor();const offerHTML=of?`<div class="offer"><div class="im" style="background:${P[of.id].tint}"><img src="${IMG[of.id]}" alt=""></div><div><span class="k">${of.k}</span><b>${of.titulo}${of.save?`<span class="save">-R$ ${fmt(of.save)}</span>`:""}</b><p>${of.texto}</p></div><button class="btn dark" onclick="acceptOffer(${JSON.stringify(of.add).replace(/"/g,"'")})">${of.acao} ${svgArrow(13)}</button></div>`:"";
+  if(!ids.length){document.getElementById("cbody").innerHTML=`<div class="cempty">${MARK.replace('width="40" height="40"','width="44" height="44"').replace('currentColor','#7B1E3A')}<h4>Seu ritual está vazio</h4><p>Comece pelo momento que você está vivendo.</p><a class="btn outline sm" href="#/quiz" onclick="closeCart()">Descobrir meu ciclo</a></div>${offerHTML}`;document.getElementById("cfoot").innerHTML="";return}
+  const lines=ids.map(id=>{const it=itemOf(id);const isKit=!!it.por;return `<div class="cline"><a class="im" href="${isKit?"#/kits":"#/produto/"+id}" onclick="closeCart()" style="background:${isKit?"var(--gray)":it.tint}"><img src="${isKit?IMG[it.img]:IMG[id]}" alt=""></a><div><b>${it.nome}</b><div class="sub">${isKit?it.itens.map(i=>P[i].curto).join(" + "):it.sub}</div><div class="ctrl"><div class="q"><button onclick="setQty('${id}',${cart[id]-1})">−</button><span>${cart[id]}</span><button onclick="setQty('${id}',${cart[id]+1})">+</button></div><button class="rm" onclick="setQty('${id}',0)">Remover</button></div></div><div class="pr">R$ ${fmt(priceOf(it)*cart[id])}${isKit?`<s>R$ ${fmt(it.de*cart[id])}</s>`:""}</div></div>`}).join("");
+  const juntou=lastJuncao?`<div class="juntou">Juntamos seus potes no <b>${lastJuncao.kits.join(" e ")}</b> e você economizou <b>R$ ${fmt(lastJuncao.economia)}</b>.</div>`:"";
+  document.getElementById("cbody").innerHTML=lines+juntou+offerHTML;
+  const eco=ids.reduce((a,id)=>{const it=itemOf(id);return a+(it.por?(it.de-it.por)*cart[id]:0)},0);
+  document.getElementById("cfoot").innerHTML=`<div class="row"><span>Subtotal</span><b>R$ ${fmt(cartTotal()+eco)}</b></div>${eco?`<div class="row save"><span>Você economiza</span><span>− R$ ${fmt(eco)}</span></div>`:""}<div class="row"><span>Frete</span><span class="muted">calculado no checkout</span></div><div class="row tot"><span>Total</span><span>R$ ${fmt(cartTotal())}</span></div><a class="btn dark block lg" href="#/checkout" onclick="closeCart()">Finalizar compra ${svgArrow()}</a><p class="note">Pix · 3x sem juros · Acompanhamento de 30 dias incluso</p>`;};
+window.openCart=function(){closeSheet();renderCart();document.getElementById("cdrawer").classList.add("open");document.body.style.overflow="hidden"};
+window.closeCart=function(){document.getElementById("cdrawer").classList.remove("open");if(!document.getElementById("sheet").classList.contains("open"))document.body.style.overflow="";lastJuncao=null};
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeCart();closeSheet()}});
 /* ============ ROUTER ============ */
 window.qtyStep=function(d){const e=document.getElementById("qty");e.textContent=Math.max(1,+e.textContent+d)};
 let buySel=null;
@@ -612,5 +678,5 @@ function render(){const app=document.getElementById("app");app.innerHTML=`<div c
 let io;function observe(){io&&io.disconnect();io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.06,rootMargin:"0px 0px -30px 0px"});document.querySelectorAll(".rv").forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight*.95)el.classList.add("in");else io.observe(el)});}
 window.addEventListener("hashchange",render);
 document.getElementById("burger").onclick=()=>document.getElementById("mnav").classList.toggle("open");
-render();
+consolidar();lastJuncao=null;saveCart();render();
 </script>
